@@ -5,8 +5,10 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 
-app.listen(PORT, (err) => {
-    !err ? console.log(`App running at http://localhost:${PORT}`) : console.log(err);
-})
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, (err) => {
+        !err ? console.log(`App running at http://localhost:${PORT}`) : console.log(err);
+    })
+});
