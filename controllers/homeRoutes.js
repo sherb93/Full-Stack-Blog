@@ -3,9 +3,14 @@ const path = require("path");
 const { User, Post, Comment } = require("../models");
 
 router.get("/", async (req, res) => {
-    const posts = await Post.findAll({ include: Comment });
+    try {
+        const allPosts = await Post.findAll();
+        const serializedPosts = allPosts.map(post => post.get({ plain: true }));
 
-    res.status(200).json(posts);
+        res.render("home", { serializedPosts });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 
