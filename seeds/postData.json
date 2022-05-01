@@ -1,1 +1,15 @@
-[]
+[
+    {
+        "title": "Creating a Full-Stack App",
+        "content": "We've been exposed to everything we need to build a full-stack web app in the bootcamp and I'm so excited to finally build a fully functional website!"
+    },
+    
+    {
+        "title": "JavaScript",
+        "content": "I'm starting to see the benefits of JavaScript over other languages. It's so versatile and you can use it for front-end AND back-end pruposes."
+    },
+    {
+        "title": "Learning SQL",
+        "content": "We didn't spend that much time on SQL but it makes sense. I'm trying to learn how to be a well rounded full-stack developer, not just a Database Admin. Knowing the basics is fine for now because I only can use Sequelize to execute SQL commands using JavaScript."
+    }
+]
