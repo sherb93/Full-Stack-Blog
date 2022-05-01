@@ -9,15 +9,22 @@ User.init(
             type: DataTypes.INTEGER,
             primaryKey: true,
             allowNull: false,
+            autoIncrement: true
         },
         username: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true
+            unique: true,
+            validate: {
+                len: [4]
+            }
         },
         password: {
             type: DataTypes.STRING,
             allowNull: false,
+            validate: {
+                len: [8]
+            }
         }   
     },
     {
