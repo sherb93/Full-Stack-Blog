@@ -1,12 +1,9 @@
 const express = require("express");
-// const users = require("./homeRoutes")
-// const posts = require("./homeRoutes")
-// const comments = require("./homeRoutes")
+const users = require("./userRoutes")
+
 
 const app = express();
 
-// app.use("/users", users);
-// app.use("/posts", posts);
-// app.use("/comments", comments);
+app.use("/users", users);
 
 module.exports = app;

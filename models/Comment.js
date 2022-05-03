@@ -11,7 +11,7 @@ Comment.init(
             allowNull: false,
             autoIncrement: true
         },
-        content: {
+        comment_body: {
             type: DataTypes.STRING(1000),
             allowNull: false,
         },
