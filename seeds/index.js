@@ -8,10 +8,14 @@ const commentSeeds = require("./commentData.json");
 const injectData = async () => {
     await sequelize.sync({ force: true }); // Delete/create tables every time seeds is run
 
-    const users = await User.bulkCreate(userSeeds);
-
     const posts = []; // Creating posts individually, so we need an array to push them into so the id's can be referenced by the comments
-
+    // const usersArr = [];
+    // for (const user of userSeeds) {
+    //     const newUser = await User.create(user);
+    //     usersArr.push(newUser);
+    // }
+    const users = await User.bulkCreate(userSeeds); //FOR SOME STUPID REASON BULKCREATE PREVENTS PASSWORD HASHING IN A HOOK
+    
     for (const post of postSeeds) {
         const newPost = await Post.create({
             ...post,
