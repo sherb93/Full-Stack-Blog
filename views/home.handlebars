@@ -1,0 +1,15 @@
+<div>
+    {{#each serializedPosts as |post|}}
+    <div class="post-container">
+        <a class="post-title" data-postId="{{post.id}}">{{post.title}}</a>
+        <a>{{post.user.username}}</a>
+        <p class="post-content">{{post.content}}</p>
+        {{#if post.comments.length}}
+        <p>{{post.comments.length}} Comments</p>
+            {{#each post.comments as |comment|}}
+            <p>{{comment.comment_body}}</p>
+            {{/each}}
+        {{/if}}
+    </div>
+    {{/each}}
+</div>
